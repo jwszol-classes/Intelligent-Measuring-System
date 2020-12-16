@@ -16,3 +16,7 @@ https://registry.opendata.aws/terrain-tiles/
 Recommended technologiese: EMR/Spark/Python/Scala/Java
 
 Results should be presented in a graphic form, using a chosen library
+
+#### Project developers (group 9):
+* Karol Damaszke
+* Bartlomiej Borzyszkowski
