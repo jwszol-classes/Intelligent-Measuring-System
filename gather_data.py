@@ -1,3 +1,5 @@
+""" Gather and plot Terrain Tiles data from s3://elevation-tiles-prod/ """
+
 import warnings
 import matplotlib.pyplot as plt
 import numpy as np
@@ -6,6 +8,15 @@ from podpac import Coordinates, clinspace
 
 
 warnings.filterwarnings('ignore')
+
+
+def plot_evaluation(evaluation_data):
+    """ Plot the elevation data """
+
+    fig = plt.figure(dpi=90)
+    evaluation_data.plot(vmin=0, cmap='terrain')
+    plt.savefig("./data_elevation.png")
+
 
 def get_terrain_tiles():
     """ Get Tiles from S3 with Podpac library """
@@ -16,12 +27,12 @@ def get_terrain_tiles():
 
     # Evaluate node
     ev = node.eval(coords)
+    plot_evaluation(ev)
     data = np.asarray(ev.data)
     return data
 
 def main():
     data = get_terrain_tiles()
-    plt.imshow(data)
     plt.savefig("./data_unprocessed.png")
 
 
