@@ -1,0 +1,1 @@
+SELECT * FROM "terrain_tiles"."table" limit 10;
