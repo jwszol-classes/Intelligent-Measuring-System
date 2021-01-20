@@ -26,7 +26,7 @@ for filename in filenames:
     coordinates = file.select(col('Coordinates')).collect()[0]['Coordinates']
     elevation = file.select(col('Elevation')).collect()[0]['Elevation']
 
-    results.append([filename, cooridinates, elevation])
+    results.append([filename, coordinates, elevation])
 
 context_sql.createDataFrame(results, Schemas.struct_result()).write.csv('s3://terrain_tiles/results/')
 context.stop()
