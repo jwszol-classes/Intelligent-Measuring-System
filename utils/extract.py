@@ -8,10 +8,13 @@ import botocore
 from botocore import UNSIGNED
 from botocore.config import Config
 
-os.chdir('out')
+os.chdir('./out')
 
 # get tiles names and separate them
 tiles_names_all = os.listdir()
+tiles_names_all.sort()
+print(tiles_names_all)
+
 tiles_names = []
 for tile in tiles_names_all:
     zoom, col, row = tile.split('.')[0].split('-')

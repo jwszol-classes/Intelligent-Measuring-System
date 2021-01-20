@@ -56,14 +56,14 @@ def get_tiles(zoom, lat1, lon1, lat2, lon2):
 
 
 def download(tiles):
-    output_path = 'out'
+    output_path = './out'
     try:
         for i, (z, x, y) in enumerate(tiles):
 
             print("Downloading " + str(i+1) + "/" + str(len(tiles)))
 
             url = KEY.format(z=z, x=x, y=y)
-            s3.Bucket(BUCKET_NAME).download_file(url, '{}\\{}-{}-{}.png'.format(output_path, z, x, y))
+            s3.Bucket(BUCKET_NAME).download_file(url, '{}//{}-{}-{}.png'.format(output_path, z, x, y))
 
     except botocore.exceptions.ClientError as e:
         if e.response['Error']['Code'] == "404":
@@ -76,7 +76,7 @@ def download(tiles):
 
 
 def plot_all():
-    os.chdir('out')
+    os.chdir('./out')
     images = os.listdir()
     for img in images:
         print(img)
@@ -94,7 +94,7 @@ def plot_all():
 
 
 def plot_one():
-    os.chdir('out')
+    os.chdir('./out')
     im = cv2.imread('all.png', cv2.IMREAD_UNCHANGED)
     height_arr = np.zeros(im.shape[:2])
     for row in range(im.shape[0]):
