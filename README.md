@@ -25,7 +25,7 @@ Results should be presented in a graphic form, using a chosen library
 
 ## Project Report
 
-> The main goal of this project was to implement a measurment system, run it at Amazon Web Services (AWS) and observe its performance.
+The main goal of this project was to implement a measurment system, run it at Amazon Web Services (AWS) and observe its performance.
 
 #### Requirements
 * account on [www.awseducate.com](http://www.awseducate.com/ "http://www.awseducate.com")
