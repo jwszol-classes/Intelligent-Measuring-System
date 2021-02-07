@@ -1,0 +1,11 @@
+boto3~=1.16.51
+botocore~=1.19.51
+opencv-python~=4.5.1.48
+matplotlib~=3.3.3
+numpy~=1.19.2
+scikit-image~=0.17.2
+pyspark~=3.0.1
+py4j~=0.10.9
+scipy~=1.5.4
+pandas~=1.1.4
+setuptools~=39.0.1
