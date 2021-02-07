@@ -3,7 +3,7 @@
 # Intelligent Measuring System
 Academic project at Gdansk University of Technology
 
-# Description
+## Description
 Design and implement a measurement system that analyzes data on terrain height variation at points with the highest growth (North and South America). The height increase in a given location should be measured on the basis of 10 measurement points. Find 6 groups of the sink basing on the average growth of altitude. Put detected areas on the map.
 
 ## Technologies
