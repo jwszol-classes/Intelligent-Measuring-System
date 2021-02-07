@@ -7,7 +7,15 @@ Academic project at Gdansk University of Technology
 Design and implement a measurement system that analyzes data on terrain height variation at points with the highest growth (North and South America). The height increase in a given location should be measured on the basis of 10 measurement points. Find 6 groups of the sink basing on the average growth of altitude. Put detected areas on the map.
 
 ## Technologies
-Project was created with pyspark ...............
+The project aimed to use cloud technologies for the efficient processing of large data sets. For this purpose, the Amazon Web Services (AWS) platform was used, on which the experiments were launched with utilization of a computing cluster. The performance of a measurement system in terms of computing time was compared with a local execution on laptop. In context of cloud computing, we defined the following technological requirements:
+
+* Account on [www.awseducate.com](http://www.awseducate.com/ "http://www.awseducate.com") ($50 credit available for project purposes)
+* Single node EMR cluster on AWS with EMR 5.32.0
+* Cluster software configuration: Spark 2.4.7 on Hadoop 2.10.1 YARN and Zeppelin 0.8.2
+* Cluster hardware configuration: m5.xlarge
+* Configuration of SSH access to the cluster based on EC2 key pair
+* S3 cloud storage with source data `s3://elevation-tiles-prod/`
+
 
 ## Dataset
 Source dataset: https://registry.opendata.aws/terrain-tiles/. It provides data split into tiles for different zoom values (from 1 to 15). Data are avaliable in four different formats:
@@ -31,10 +39,11 @@ As the aim of our project was to find points with the highest growth, we had to 
 
 
 ### Results
-During project, two solutions were prepared: pure-python and pyspark version..............................
+During project, two solutions were prepared: pure-python and pyspark version 2.4.7
 
 
 Final result - 6 groups based on growth of altitude:
+
 ![Final plot](results/gradient_map_groups.png)
 
 Time results for pure-python version:
@@ -53,7 +62,12 @@ Time results for pyspark version:
 
 
 ### Conclusion
-.......................
+
+Our results show successful, comprehensive data analysis on terrain height variation at points with the highest growth on the selected region (North and South America). We find and present 6 groups of the elevation and mark them with corresponding colors on the map, using different zooms for increased precision of measurements.
+
+Possibilities that we get thanks to a presented approach to data filtering in the cloud are very convenient. We are capable of retrieving required values from big set of data in a very short time. Our performance measurements show that the time of data processing at AWS is around twice faster than while using a personal laptop. Moreover, we are able to benefit from parallel processing of data in batch systems in PySpark which gives us further double acceleration of system while keeping the same, expected results of analysis.
+
+Moreover, the main advantage of the presented approach is its high scalability, universality and reliability. Thanks to access to a cloud environment, we are able to easily increase the resources of our cluster, e.g. by adding more instances (nodes) or by using more efficient computing units (up to m5.24xlarge instances at AWS). Furthermore, we benefit from great software scalability of PySpark which brings robust and cost-effective ways to filter huge data collections in the cloud. On the other hand, we're able to quickly and easily reconfigure your environment and use the computing resources only when necessary and therefore lead to massive cost savings. The entire process is very user-friendly even for beginners thanks to a well-supported community and environment of AWS.
 
 
 #### Project developers (group 9):
