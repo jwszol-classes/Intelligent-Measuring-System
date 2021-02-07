@@ -34,7 +34,7 @@ For our project we decided to choose terrarium format, as it provides elevation 
 
 where *red*, *green* and *blue* are colour channels values.
 
-### Speed of growth
+## Speed of growth
 As the aim of our project was to find points with the highest growth, we had to calculate first derivative of height array - the gradient. After testing a few solutions, we observed that the most efficient way is to use *numpy.gradient* function. It is computing gradient using second order accurate central differences in the interior points and either first or second order accurate one-sides (forward or backwards) differences at the boundaries.
 
 
