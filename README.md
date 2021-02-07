@@ -38,7 +38,7 @@ where *red*, *green* and *blue* are colour channels values.
 As the aim of our project was to find points with the highest growth, we had to calculate first derivative of height array - the gradient. After testing a few solutions, we observed that the most efficient way is to use *numpy.gradient* function. It is computing gradient using second order accurate central differences in the interior points and either first or second order accurate one-sides (forward or backwards) differences at the boundaries.
 
 
-### Results
+## Results
 During project, two solutions were prepared: pure-python and pyspark version 2.4.7
 
 
@@ -61,7 +61,7 @@ Time results for pyspark version:
     - zoom 3 -> 6.148108624999622 seconds
 
 
-### Conclusion
+## Conclusion
 
 Our results show successful, comprehensive data analysis on terrain height variation at points with the highest growth on the selected region (North and South America). We find and present 6 groups of the elevation and mark them with corresponding colors on the map, using different zooms for increased precision of measurements.
 
