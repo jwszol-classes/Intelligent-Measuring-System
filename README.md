@@ -7,7 +7,7 @@ Academic project at Gdansk University of Technology
 Design and implement a measurement system that analyzes data on terrain height variation at points with the highest growth (North and South America). The height increase in a given location should be measured on the basis of 10 measurement points. Find 6 groups of the sink basing on the average growth of altitude. Put detected areas on the map.
 
 ## Technologies
-Project was created with pyspark
+Project was created with pyspark ...............
 
 ## Dataset
 Source dataset: https://registry.opendata.aws/terrain-tiles/. It provides data split into tiles for different zoom values (from 1 to 15). Data are avaliable in four different formats:
@@ -22,16 +22,16 @@ Source dataset: https://registry.opendata.aws/terrain-tiles/. It provides data s
 
 For our project we decided to choose terrarium format, as it provides elevation value in each point. To exctract height value, we used formula:
 
->$$height = (red * 256 + green + blue / 256) - 32768$$
+>*height = (red * 256 + green + blue / 256) - 32768*
 
-where $$red$$, $$green$$ and $$blue$$ are colour channels values.
+where *red*, *green* and *blue* are colour channels values.
 
 ### Speed of growth
 As the aim of our project was to find points with the highest growth, we had to calculate first derivative of height array - the gradient. After testing a few solutions, we observed that the most efficient way is to use *numpy.gradient* function. It is computing gradient using second order accurate central differences in the interior points and either first or second order accurate one-sides (forward or backwards) differences at the boundaries.
 
 
 ### Results
-During project, two solutions were prepared: pure-python and pyspark version. blablabla
+During project, two solutions were prepared: pure-python and pyspark version..............................
 
 
 Final result - 6 groups based on growth of altitude:
@@ -53,7 +53,7 @@ Time results for pyspark version:
 
 
 ### Conclusion
-
+.......................
 
 
 #### Project developers (group 9):
