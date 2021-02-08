@@ -18,6 +18,7 @@ findspark.init()
 
 import matplotlib.pyplot as plt
 import numpy as np
+import time
 
 from pyspark.sql import SparkSession
 
@@ -45,7 +46,8 @@ def get_height(curr_tile):
     return np.array([list(map(rgb_to_meters, row)) for row in curr_tile])
 
 
-# start time
+start_time = time.time()
+
 tiles_rdd = spark.sparkContext.parallelize(tiles)
 height_tiles = tiles_rdd.map(get_height)
 grad_arr = np.asarray(height_tiles.map(np.gradient).collect())
@@ -100,6 +102,6 @@ grad_img_rdd = spark.sparkContext.parallelize(grad_img)
 grouped_grad_img = np.asarray(grad_img_rdd.map(grouping).collect())
 plt.imsave('gradient_groups.png', grouped_grad_img)
 
-# stop time
-
+stop_time = time.time()
+print("Processing time: %s seconds " % (stop_time - start_time))
 # ----------------------------------------------------------------------------------------------------------------------
